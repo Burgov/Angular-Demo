@@ -1,0 +1,9 @@
+<div>
+    <input [ngClass]="showErrors() ? 'errorTextField': 'textField'" 
+    [formControl]="control" type="{{input}}" placeholder="{{label}}"
+    />
+    <ng-container *ngIf="showErrors()">
+<p  *ngIf="control?.errors?.required" class="errorText">Value is required</p>
+<p  *ngIf="control?.errors?.minlength" class="errorText">Min length is {{control?.errors?.minlength.requiredLength}}</p>
+    </ng-container>
+</div>>
